@@ -1,5 +1,4 @@
-let name = "Полина";
-
-let age = 19;
-
-console.log(name);
+let num1, num2;
+num1 = 'Polina';
+num2 = num1;
+console.log(num2);

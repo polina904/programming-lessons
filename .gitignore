@@ -1,2 +1,4 @@
 node_modules/
-.vs
+git add .
+git commit -m "add gitignore"
+git push

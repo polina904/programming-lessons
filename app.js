@@ -1,3 +1,5 @@
+//СОЗДАДИМ ФАЙЛ APP.JS/ТОЧКА ВХОДА НАШЕГО ПРОЕКТА
+
 const express = require('express');
 const app = express();
 app.set('port', process.env.PORT || 3000);
@@ -18,6 +20,11 @@ app.listen(app.get('port'), function () {
     console.log('Express запущен на http://localhost:' +
         app.get('port') + '; нажмите Ctrl+C для завершения.');
 });
+
+
+//ДОБАВИМ МАРШРУТЫ ДЛЯ ДОМАШНЕЙ СТРАНИЦЫ И СТРАНИЦЫ О.
+//ПЕРЕД ОБРАБОТЧИКОМ 404 дДОБАВЛЯЕМ ДВА НОВЫХ МАРШРУТА:
+
 app.get('/', function (req, res) {
     res.type('text/plain');
     res.send('Главная страница');
@@ -32,6 +39,9 @@ app.use(function (req, res, next) {
     res.status(404);
     res.send('404 — Не найдено');
 });
+
+
+
 app.get('/about*', function (req, res) {
     // отправляем контент...
 })

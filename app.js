@@ -7,7 +7,7 @@ app.set('port', process.env.PORT || 3000);
 app.use(function (req, res) {
     res.type('text/plain');
     res.status(404);
-    res.send('404 — не найдено');
+    res.send('404 — Не найдено ');
 });
 // пользовательская страница 500
 app.use(function (err, req, res, next) {
@@ -20,7 +20,6 @@ app.listen(app.get('port'), function () {
     console.log('Express запущен на http://localhost:' +
         app.get('port') + '; нажмите Ctrl+C для завершения.');
 });
-
 
 //ДОБАВИМ МАРШРУТЫ ДЛЯ ДОМАШНЕЙ СТРАНИЦЫ И СТРАНИЦЫ О.
 //ПЕРЕД ОБРАБОТЧИКОМ 404 ДОБАВЛЯЕМ ДВА НОВЫХ МАРШРУТА:
@@ -39,15 +38,3 @@ app.use(function (req, res, next) {
     res.status(404);
     res.send('404 — Не найдено');
 });
-
-
-
-app.get('/about*', function (req, res) {
-    // отправляем контент...
-})
-app.get('/about/contact', function (req, res) {
-    // отправляем контент...
-})
-app.get('/about/directions', function (req, res) {
-    // отправляем контент...
-})
